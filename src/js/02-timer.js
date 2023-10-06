@@ -10,12 +10,12 @@ const myseconds = document.querySelector('[data-seconds]');
 const ButtomStart = document.querySelector('[data-start]');
 let Id = null;
 
-
+ButtomStart.toggleAttribute('disabled');
 
 const options = {
     enableTime: true,
     time_24hr: true,
-    defaultDate: new Date(),
+    // defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
       if (selectedDates[0] <= new Date()) {
@@ -39,6 +39,7 @@ function onButtomStart() {
         if (sel <= 0) {
             clearInterval(Id);
             ButtomStart.disabled = false;
+            flp.clear();
             return;
         }
 

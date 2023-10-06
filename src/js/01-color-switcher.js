@@ -14,12 +14,16 @@ function colorchange() {
 ButtomStart.addEventListener('click', () => {
 colorchange();
 Changebody = setInterval(colorchange, 1000);
+ButtomStart.disabled = true;
+ButtomStop.disabled = false;
 });
 
 
 
 ButtomStop.addEventListener('click', () => {
     clearInterval(Changebody);
+    ButtomStart.disabled = false;
+    ButtomStop.disabled = true;
     });
 
     
